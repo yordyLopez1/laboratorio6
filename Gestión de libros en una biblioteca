@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Libro {
+private:
+    string titulo;
+    string autor;
+    int ano_publicacion;
+
+public:
+    // Constructor
+    Libro(string _titulo, string _autor, int _ano_publicacion) : titulo(_titulo), autor(_autor), ano_publicacion(_ano_publicacion) {}
+
+    // Métodos para obtener y establecer los datos
+    string get_titulo() {
+        return titulo;
+    }
+
+    void set_titulo(string _titulo) {
+        titulo = _titulo;
+    }
+
+    string get_autor() {
+        return autor;
+    }
+
+    void set_autor(string _autor) {
+        autor = _autor;
+    }
+
+    int get_ano_publicacion() {
+        return ano_publicacion;
+    }
+
+    void set_ano_publicacion(int _ano_publicacion) {
+    ano_publicacion = _ano_publicacion;
+}
+
+
+
+    // Método para mostrar la información del libro
+    void mostrar_informacion() {
+        cout << "Titulo: " << titulo << endl;
+        cout << "Autor: " << autor << endl;
+        cout << "Ano de publicacion: " << ano_publicacion << endl;
+    }
+};
+
+int main() {
+    // Ejemplo de uso
+    Libro libro1("El senor de los anillos", "J.R.R. Tolkien", 1954);
+    libro1.mostrar_informacion();
+
+    // Modificando el título del libro
+    libro1.set_titulo("El hobbit");
+    libro1.mostrar_informacion();
+
+    return 0;
+}
