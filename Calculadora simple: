@@ -1,0 +1,46 @@
+#include <iostream>
+
+class Calculadora {
+private:
+    double numero1;
+    double numero2;
+
+public:
+    // Constructor
+    Calculadora(double num1, double num2) : numero1(num1), numero2(num2) {}
+
+    // Métodos para realizar operaciones
+    double sumar() const {
+        return numero1 + numero2;
+    }
+
+    double restar() const {
+        return numero1 - numero2;
+    }
+
+    double multiplicar() const {
+        return numero1 * numero2;
+    }
+
+    double dividir() const {
+        if (numero2 != 0) {
+            return numero1 / numero2;
+        } else {
+            std::cerr << "Error: No se puede dividir por cero." << std::endl;
+            return 0; // O podrías manejar el error de otra manera según tus necesidades
+        }
+    }
+};
+
+int main() {
+    // Crear un objeto Calculadora con dos números
+    Calculadora miCalculadora(10.0, 5.0);
+
+    // Realizar operaciones
+    std::cout << "Suma: " << miCalculadora.sumar() << std::endl;
+    std::cout << "Resta: " << miCalculadora.restar() << std::endl;
+    std::cout << "Multiplicacion: " << miCalculadora.multiplicar() << std::endl;
+    std::cout << "Division: " << miCalculadora.dividir() << std::endl;
+
+    return 0;
+}
