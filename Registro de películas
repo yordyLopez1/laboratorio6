@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Pelicula {
+private:
+    string titulo;
+    string director;
+    int anoLanzamiento;
+
+public:
+    // Constructor
+    Pelicula(string _titulo, string _director, int _anoLanzamiento) {
+        titulo = _titulo;
+        director = _director;
+        anoLanzamiento = _anoLanzamiento;
+    }
+
+    // Métodos para establecer los datos
+    void setTitulo(string _titulo) {
+        titulo = _titulo;
+    }
+
+    void setDirector(string _director) {
+        director = _director;
+    }
+
+    void setAnoLanzamiento(int _anoLanzamiento) {
+        anoLanzamiento = _anoLanzamiento;
+    }
+
+    // Métodos para obtener los datos
+    string getTitulo() {
+        return titulo;
+    }
+
+    string getDirector() {
+        return director;
+    }
+
+    int getAnoLanzamiento() {
+        return anoLanzamiento;
+    }
+
+    // Método para mostrar la información de la película
+    void mostrarInformacion() {
+        cout << "Título: " << titulo << endl;
+        cout << "Director: " << director << endl;
+        cout << "Año de lanzamiento: " << anoLanzamiento << endl;
+    }
+};
+
+int main() {
+    // Crear una película
+    Pelicula pelicula("El padrino", "Francis Ford Coppola", 1972);
+
+    // Mostrar la información de la película
+    pelicula.mostrarInformacion();
+
+    // Cambiar el director de la película
+    pelicula.setDirector("Martin Scorsese");
+
+    // Mostrar la información actualizada de la película
+    pelicula.mostrarInformacion();
+
+    return 0;
+}
